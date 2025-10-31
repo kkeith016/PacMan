@@ -1,7 +1,6 @@
 package com.kyleekeith.pacman.core;
 
 import com.kyleekeith.pacman.entities.*;
-import com.kyleekeith.pacman.util.Constants;
 import java.util.*;
 
 public class GameLogic {

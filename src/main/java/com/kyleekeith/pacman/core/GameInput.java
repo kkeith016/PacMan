@@ -1,11 +1,20 @@
 package com.kyleekeith.pacman.core;
 
 import java.awt.event.KeyEvent;
+import java.util.Map;
 import com.kyleekeith.pacman.entities.Pacman;
 import com.kyleekeith.pacman.util.Constants;
 
 public class GameInput {
-    private com.kyleekeith.pacman.core.GameLogic logic;
+    private final GameLogic logic;
+
+    // Map key codes to directions
+    private static final Map<Integer, Character> keyDirectionMap = Map.of(
+            KeyEvent.VK_UP, 'U',
+            KeyEvent.VK_DOWN, 'D',
+            KeyEvent.VK_LEFT, 'L',
+            KeyEvent.VK_RIGHT, 'R'
+    );
 
     public GameInput(GameLogic logic) {
         this.logic = logic;
@@ -13,12 +22,10 @@ public class GameInput {
 
     public void handleInput(KeyEvent e) {
         Pacman pac = logic.getPacman();
+        Character direction = keyDirectionMap.get(e.getKeyCode());
 
-        switch (e.getKeyCode()) {
-            case KeyEvent.VK_UP -> pac.setDirection('U', Constants.SPEED);
-            case KeyEvent.VK_DOWN -> pac.setDirection('D', Constants.SPEED);
-            case KeyEvent.VK_LEFT -> pac.setDirection('L', Constants.SPEED);
-            case KeyEvent.VK_RIGHT -> pac.setDirection('R', Constants.SPEED);
+        if (direction != null) {
+            pac.setDirection(direction, Constants.SPEED);
         }
     }
 }
