@@ -5,15 +5,15 @@ import java.util.*;
 
 public class GameLogic {
 
-    private Pacman pacman;
-    private Set<Wall> walls = new HashSet<>();
-    private Set<Food> foods = new HashSet<>();
-    private Set<Ghost> ghosts = new HashSet<>();
+    private final Pacman pacman;
+    private final Set<Wall> walls = new HashSet<>();
+    private final Set<Food> foods = new HashSet<>();
+    private final Set<Ghost> ghosts = new HashSet<>();
 
     private boolean gameOver = false;
     private int score = 0;
     private int lives = 3;
-    private MapLoader mapLoader = new MapLoader();
+    private final MapLoader mapLoader = new MapLoader();
 
     public GameLogic() {
         mapLoader.loadLevel(walls, foods, ghosts);

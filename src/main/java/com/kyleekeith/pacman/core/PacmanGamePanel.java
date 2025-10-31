@@ -11,12 +11,12 @@ import java.util.Set;
 
 public class PacmanGamePanel extends JPanel implements ActionListener, KeyListener {
 
-    private Timer timer;
-    private MapLoader loader = new MapLoader();
+    private final Timer timer;
+    private final MapLoader loader = new MapLoader();
 
-    private Set<Wall> walls = new HashSet<>();
-    private Set<Food> foods = new HashSet<>();
-    private Set<Ghost> ghosts = new HashSet<>();
+    private final Set<Wall> walls = new HashSet<>();
+    private final Set<Food> foods = new HashSet<>();
+    private final Set<Ghost> ghosts = new HashSet<>();
     private Pacman pacman;
 
     private int score = 0;
