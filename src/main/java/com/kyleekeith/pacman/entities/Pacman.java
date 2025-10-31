@@ -1,50 +1,34 @@
 package com.kyleekeith.pacman.entities;
 
-import java.awt.*;
+import java.awt.Image;
+import com.kyleekeith.pacman.util.Constants;
 
-public class Pacman {
-    public int x, y, width;
-    public int velocityX = 0, velocityY = 0;
-    public Image upImage, downImage, leftImage, rightImage;
-    public Image currentImage;
-    private final int startX, startY;
+public class Pacman extends GameObject {
+    public Image currentImage, up, down, left, right;
+    private int startX, startY;
 
-    public Pacman(Image up, Image down, Image left, Image right, int startX, int startY, int size) {
-        this.upImage = up;
-        this.downImage = down;
-        this.leftImage = left;
-        this.rightImage = right;
+    public Pacman(Image up, Image down, Image left, Image right, int x, int y, int size) {
+        this.up = up; this.down = down; this.left = left; this.right = right;
         this.currentImage = right;
-        this.x = startX;
-        this.y = startY;
-        this.startX = startX;
-        this.startY = startY;
-        this.width = size;
-    }
-
-    public void move() {
-        x += velocityX;
-        y += velocityY;
+        this.x = startX = x; this.y = startY = y;
+        this.width = this.height = size;
     }
 
     public void setDirection(char dir, int speed) {
         switch (dir) {
-            case 'U' -> { velocityX = 0; velocityY = -speed; currentImage = upImage; }
-            case 'D' -> { velocityX = 0; velocityY = speed; currentImage = downImage; }
-            case 'L' -> { velocityX = -speed; velocityY = 0; currentImage = leftImage; }
-            case 'R' -> { velocityX = speed; velocityY = 0; currentImage = rightImage; }
+            case 'U' -> { velocityX = 0; velocityY = -speed; currentImage = up; }
+            case 'D' -> { velocityX = 0; velocityY = speed; currentImage = down; }
+            case 'L' -> { velocityX = -speed; velocityY = 0; currentImage = left; }
+            case 'R' -> { velocityX = speed; velocityY = 0; currentImage = right; }
         }
     }
 
-    public void reset() {
-        x = startX;
-        y = startY;
-        velocityX = 0;
-        velocityY = 0;
-        currentImage = rightImage;
-    }
+    @Override
+    public void move() { x += velocityX; y += velocityY; }
 
-    public Rectangle getBounds() {
-        return new Rectangle(x, y, width, width);
-    }
+    @Override
+    public void undoMove() { x -= velocityX; y -= velocityY; }
+
+    @Override
+    public void reset() { x = startX; y = startY; velocityX = velocityY = 0; }
 }

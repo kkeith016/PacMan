@@ -1,20 +1,16 @@
 package com.kyleekeith.pacman.entities;
 
-import java.awt.*;
+import java.awt.Image;
 
-public class Wall {
-    public int x, y, width, height;
+public class Wall extends GameObject {
     public Image image;
-
-    public Wall(Image image, int x, int y, int width, int height) {
-        this.image = image;
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
+    public Wall(Image img, int x, int y, int width, int height){
+        this.image = img;
+        this.x=x; this.y=y;
+        this.width=width; this.height=height;
     }
 
-    public Rectangle getBounds() {
-        return new Rectangle(x, y, width, height);
-    }
+    @Override public void move() {}
+    @Override public void undoMove() {}
+    @Override public void reset() {}
 }

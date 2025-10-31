@@ -1,15 +1,12 @@
 package com.kyleekeith.pacman.entities;
 
-import java.awt.*;
-
-public class Food {
-    public int x, y, width, height;
-
-    public Food(int x, int y, int width, int height) {
-        this.x = x; this.y = y; this.width = width; this.height = height;
+public class Food extends GameObject {
+    public boolean isSuperPellet = false;
+    public Food(int x, int y, int w, int h, boolean superPellet){
+        this.x=x; this.y=y; this.width=w; this.height=h; this.isSuperPellet=superPellet;
     }
 
-    public Rectangle getBounds() {
-        return new Rectangle(x, y, width, height);
-    }
+    @Override public void move() {}
+    @Override public void undoMove() {}
+    @Override public void reset() {}
 }

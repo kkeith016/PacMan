@@ -2,30 +2,39 @@ package com.kyleekeith.pacman.entities;
 
 public class TileMap {
 
-    public final String[] layout = {
-            "XXXXXXXXXXXXXXXXXXX",
-            "X        X        X",
-            "X XX XXX X XXX XX X",
-            "X                 X",
-            "X XX X XXXXX X XX X",
-            "X    X       X    X",
-            "XXXX XXXX XXXX XXXX",
-            "OOOX X       X XOOO",
-            "XXXX X XXrXX X XXXX",
-            "O       bpo       O",
-            "XXXX X XXXXX X XXXX",
-            "OOOX X       X XOOO",
-            "XXXX X XXXXX X XXXX",
-            "X        X        X",
-            "X XX XXX X XXX XX X",
-            "X  X     P     X  X",
-            "XX X X XXXXX X X XX",
-            "X    X   X   X    X",
-            "X XXXXXX X XXXXXX X",
-            "X                 X",
-            "XXXXXXXXXXXXXXXXXXX"
+    public static final String[] layout = {
+            "XXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "X............XX............X",
+            "X.X XX.XX XX.XX.XX XX.XX X.X",
+            "X*X  X.XX XX.  .XX XX.X  X*X",
+            "X.XX X.XX XX.XX.XX XX.X XX.X",
+            "X.............P............X",
+            "X.XXXX. X.X X X XX.XX.X XX.X",
+            "X.XXXX. X.X X X XX.XX.X XX.X",
+            "X...... X....XX....XX......X",
+            "XXXXXX.XXXXX XX XXXXX.XXXXXX",
+            "     X.XXXXX XX XXXXX.X     ",
+            "     X.XX          XX.X     ",
+            "     X.XX XXXXXXXX XX.X     ",
+            "XXXXXX.XX X b o    X XX.XXXXXX",
+            "          X o      X          ",
+            "XXXXXX.XX X p r   X XX.XXXXXX",
+            "     X.XX XXXXXXXX XX.X     ",
+            "     X.XX          XX.X     ",
+            "     X.XX XXXXXXXX XX.X     ",
+            "XXXXXX.XX XXXXXXXX XX.XXXXXX",
+            "X............XX............X",
+            "X.XXXX.XXXXX.XX.XXXXX.XXXX.X",
+            "X*XXXX.XXXXX.XX.XXXXX.XXXX*X",
+            "X...XX................XX...X",
+            "XXX.XX.XX.XXXXXXXX.XX.XX.XXX",
+            "X......XX....XX....XX......X",
+            "X.XXXXXXXXXX.XX.XXXXXXXXXX.X",
+            "X..........................X",
+            "XXXXXXXXXXXXXXXXXXXXXXXXXXXX"
     };
 
-    public int getRows() { return layout.length; }
-    public int getCols() { return layout[0].length(); }
+    public static int getRows() { return layout.length; }
+
+    public static int getCols() { return layout[0].length(); }
 }
