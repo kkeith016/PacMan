@@ -1,6 +1,6 @@
 package com.kyleekeith.pacman;
 
-import com.kyleekeith.pacman.GameFrame;
+import com.kyleekeith.pacman.core.GameFrame;
 
 import javax.swing.SwingUtilities;
 

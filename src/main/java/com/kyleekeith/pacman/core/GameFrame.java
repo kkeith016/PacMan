@@ -1,6 +1,4 @@
-package com.kyleekeith.pacman;
-
-import com.kyleekeith.pacman.core.PacmanGamePanel;
+package com.kyleekeith.pacman.core;
 
 import javax.swing.*;
 
