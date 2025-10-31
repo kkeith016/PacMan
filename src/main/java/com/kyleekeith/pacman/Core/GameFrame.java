@@ -1,4 +1,4 @@
-package com.kyleekeith.pacman;
+package com.kyleekeith.pacman.Core;
 
 import javax.swing.*;
 

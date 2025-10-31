@@ -1,4 +1,6 @@
-package com.kyleekeith.pacman;
+package com.kyleekeith.pacman.Core;
+
+import com.kyleekeith.pacman.entities.*;
 
 import javax.swing.*;
 import java.awt.*;

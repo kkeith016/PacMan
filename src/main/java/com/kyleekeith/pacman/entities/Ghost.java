@@ -1,4 +1,4 @@
-package com.kyleekeith.pacman;
+package com.kyleekeith.pacman.entities;
 
 import java.awt.*;
 import java.util.Random;
@@ -33,7 +33,6 @@ public class Ghost {
         }
     }
 
-    // ✅ Fixed: reset takes no arguments
     public void reset() {
         x = startX;
         y = startY;

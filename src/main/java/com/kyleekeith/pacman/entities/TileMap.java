@@ -1,4 +1,4 @@
-package com.kyleekeith.pacman;
+package com.kyleekeith.pacman.entities;
 
 public class TileMap {
 
