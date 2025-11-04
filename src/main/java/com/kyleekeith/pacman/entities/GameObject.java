@@ -4,10 +4,13 @@ import java.awt.Rectangle;
 
 public abstract class GameObject {
     public int x, y, width, height;
-    public int velocityX, velocityY;
+    public int velocityX = 0, velocityY = 0;
 
     public abstract void move();
     public abstract void undoMove();
     public abstract void reset();
-    public Rectangle getBounds() { return new Rectangle(x, y, width, height); }
+
+    public Rectangle getBounds() {
+        return new Rectangle(x, y, width, height);
+    }
 }

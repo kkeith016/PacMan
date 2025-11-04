@@ -8,7 +8,7 @@ import com.kyleekeith.pacman.util.Constants;
 public class GameInput {
     private final GameLogic logic;
 
-    // Map key codes to directions
+
     private static final Map<Integer, Character> keyDirectionMap = Map.of(
             KeyEvent.VK_UP, 'U',
             KeyEvent.VK_DOWN, 'D',
